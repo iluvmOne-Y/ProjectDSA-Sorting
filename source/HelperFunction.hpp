@@ -2,9 +2,10 @@
 #define HELPER_FUNCTION_HPP
 
 #include "algorithms.hpp"
-#include <string>
+#include <cmath>
 #include <fstream>
-int* readDataFromFile(const std::string& filename, int &n);
-AlgorithmInfo* findAlgorithm(const std::string& name);
-
+#include <string>
+int *readDataFromFile(const std::string &filename, int &n);
+AlgorithmInfo *findAlgorithm(const std::string &name);
+int chooseInputOrder(string s);
 #endif
