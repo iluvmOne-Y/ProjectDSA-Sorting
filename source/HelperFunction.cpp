@@ -33,3 +33,20 @@ int chooseInputOrder(string s) {
   } else
     return 3;
 }
+void printTerminal(int order, double runningTime, long long comparasion) {
+  if (order == 0) {
+    cout << "Input order: Randomized" << endl;
+  } else if (order == 1) {
+    cout << "Input order: Sorted" << endl;
+
+  } else if (order == 2) {
+    cout << "Input order: Reversed" << endl;
+
+  } else
+    cout << "Input order:Nearly Sorted " << endl;
+
+  cout << "-------------------------------------" << endl;
+  cout << "Running Time: " << runningTime << endl;
+  cout << "Comparasions: " << comparasion << endl;
+  cout << endl;
+}

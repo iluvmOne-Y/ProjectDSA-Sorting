@@ -14,7 +14,7 @@ void Command1(string algorithmMode, string algorithmName, string intputFile,
   }
   int size = 0;
   int *data = readDataFromFile(intputFile, size);
-  algorithm->sort(data, size);
+  long long count = algorithm->sort(data, size);
   for (int i = 0; i < size; i++) {
     cout << data[i] << " ";
   }
@@ -22,6 +22,9 @@ void Command1(string algorithmMode, string algorithmName, string intputFile,
   cout << "Algorithm: " << algorithmName << endl;
   cout << "Input file: " << intputFile << endl;
   cout << "Input Size: " << size << endl;
+  cout << "-------------------------------------" << endl;
+  cout << "Running Time: " << endl;
+  cout << "Comparasions: " << count;
   ofstream file("output.txt");
   for (int i = 0; i < size; i++) {
     file << data[i] << " ";
@@ -37,7 +40,7 @@ void Command2(string algorithmMode, string algorithmName, string InputSize,
   long long size = stoll(InputSize);
   int data[size];
   GenerateData(data, size, chooseInputOrder(inputOrder));
-  algorithm->sort(data, size);
+  long long count = algorithm->sort(data, size);
   for (int i = 0; i < size; i++) {
     cout << data[i] << " ";
   }
@@ -59,18 +62,23 @@ void Command3(string algorithmMode, string algorithmName, string InputSize,
   }
   long long size = stoll(InputSize);
   int data[size];
-
-  GenerateData(data, size, 0);
-  algorithm->sort(data, size);
-  GenerateData(data, size, 1);
-  algorithm->sort(data, size);
-  GenerateData(data, size, 2);
-  algorithm->sort(data, size);
-  GenerateData(data, size, 3);
-  algorithm->sort(data, size);
+  double runningTime = 0;
   cout << "ALGORITHM MODE" << endl;
   cout << "Algorithm: " << algorithmName << endl;
   cout << "Input Size: " << size << endl;
+  cout << endl;
+  GenerateData(data, size, 0);
+  long long count1 = algorithm->sort(data, size);
+  printTerminal(0, runningTime, count1);
+  GenerateData(data, size, 1);
+  long long count2 = algorithm->sort(data, size);
+  printTerminal(1, runningTime, count2);
+  GenerateData(data, size, 2);
+  long long count3 = algorithm->sort(data, size);
+  printTerminal(2, runningTime, count3);
+  GenerateData(data, size, 3);
+  long long count4 = algorithm->sort(data, size);
+  printTerminal(3, runningTime, count4);
   ofstream file("output.txt");
   for (int i = 0; i < size; i++) {
     file << data[i] << " ";

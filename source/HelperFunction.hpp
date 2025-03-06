@@ -8,4 +8,5 @@
 int *readDataFromFile(const std::string &filename, int &n);
 AlgorithmInfo *findAlgorithm(const std::string &name);
 int chooseInputOrder(string s);
+void printTerminal(int order, double runningTime, long long comparasion);
 #endif

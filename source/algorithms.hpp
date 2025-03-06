@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-typedef void (*SortFunction)(int[], int);
+typedef long long (*SortFunction)(int[], int);
 
 struct AlgorithmInfo {
   string name;
@@ -13,8 +13,8 @@ struct AlgorithmInfo {
 };
 
 extern std::vector<AlgorithmInfo> algorithms;
-
-void SelectionSort(int data[], int size);
-void InsertionSort(int a[], int n);
-void QuickSort(int a[], int n);
+long long SelectionSort(int a[], int n);
+long long InsertionSort(int a[], int n);
+long long QuickSort(int a[], int n);
+long long BinaryInsertionSort(int a[], int n);
 #endif
