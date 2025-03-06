@@ -50,3 +50,29 @@ void Command2(string algorithmMode, string algorithmName, string InputSize,
     file << data[i] << " ";
   }
 }
+void Command3(string algorithmMode, string algorithmName, string InputSize,
+              string outputParameter) {
+  AlgorithmInfo *algorithm = findAlgorithm(algorithmName);
+  if (algorithm == nullptr) {
+    cout << "Not found algorithm" << endl;
+    return;
+  }
+  long long size = stoll(InputSize);
+  int data[size];
+
+  GenerateData(data, size, 0);
+  algorithm->sort(data, size);
+  GenerateData(data, size, 1);
+  algorithm->sort(data, size);
+  GenerateData(data, size, 2);
+  algorithm->sort(data, size);
+  GenerateData(data, size, 3);
+  algorithm->sort(data, size);
+  cout << "ALGORITHM MODE" << endl;
+  cout << "Algorithm: " << algorithmName << endl;
+  cout << "Input Size: " << size << endl;
+  ofstream file("output.txt");
+  for (int i = 0; i < size; i++) {
+    file << data[i] << " ";
+  }
+}
