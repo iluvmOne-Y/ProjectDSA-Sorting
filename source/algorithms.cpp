@@ -23,6 +23,7 @@ long long BubbleSort(int a[], int n) {
   }
   return count;
 }
+
 long long SelectionSort(int a[], int n) {
   long long count = 0;
   for (int i = 0; i < n - 1; i++) {
@@ -98,5 +99,35 @@ void QuickSortRecursion(int a[], int low, int high, long long &count) {
 long long QuickSort(int a[], int n) {
   long long count = 0;
   QuickSortRecursion(a, 0, n - 1, count);
+  return count;
+}
+void countSort(int a[], int n, int exponent, long long &countNum) {
+  int output[n];
+  int count[10] = {0};
+  for (int i = 0; i < n; i++) {
+    countNum++;
+    count[(a[i] / exponent) % 10]++;
+  }
+  for (int i = 1; i < 10; i++) {
+    countNum++;
+    count[i] = count[i - 1];
+  }
+  for (int i = n - 1; i >= 0; i++) {
+    countNum++;
+    output[count[(a[i] / exponent) % 10] - 1] = a[i];
+    count[(a[i] / exponent) % 10]--;
+  }
+  for (int i = 0; i < n; i++) {
+    countNum++;
+    a[i] = output[i];
+  }
+}
+long long RadixSort(int a[], int n) {
+  long long count = 0;
+  int max = findMax(a, n);
+
+  for (int exp = 1; max / exp; exp *= 10) {
+    countSort(a, n, exp, count);
+  }
   return count;
 }
