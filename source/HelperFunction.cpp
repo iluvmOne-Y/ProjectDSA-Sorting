@@ -33,7 +33,17 @@ int chooseInputOrder(string s) {
   } else
     return 3;
 }
-void printTerminal(int order, double runningTime, long long comparasion) {
+void printOutputBasedOnParameter(string outputParameter, double time, long long comparisons) {
+  if (outputParameter == "-time") {
+    cout << "Running Time: " << time << " ms" << endl;
+  } else if (outputParameter == "-comp") {
+    cout << "Comparisons: " << comparisons << endl;
+  } else if (outputParameter == "-both") {
+    cout << "Running Time: " << time << " ms" << endl;
+    cout << "Comparisons: " << comparisons << endl;
+  }
+}
+void printTerminal(string outputParameter,int order, double runningTime, long long comparasion) {
   if (order == 0) {
     cout << "Input order: Randomized" << endl;
   } else if (order == 1) {
@@ -46,7 +56,14 @@ void printTerminal(int order, double runningTime, long long comparasion) {
     cout << "Input order:Nearly Sorted " << endl;
 
   cout << "-------------------------------------" << endl;
-  cout << "Running Time: " << runningTime << endl;
-  cout << "Comparasions: " << comparasion << endl;
+  printOutputBasedOnParameter(outputParameter, runningTime, comparasion);
   cout << endl;
+}
+
+void writeFile(int a[], int size, string fileName) {
+  ofstream output(fileName);
+  output << size << endl;
+  for (int i = 0; i < size; i++) {
+    output << a[i] << " ";
+  }
 }
