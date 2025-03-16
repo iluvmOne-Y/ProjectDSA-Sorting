@@ -98,10 +98,17 @@ int partition(int a[], int low, int high, long long& count) {
 }
 
 void QuickSortRecursion(int a[], int low, int high, long long& count) {
-    if (low < high) {
+    while (low < high) {
         int pi = partition(a, low, high, count);
-        QuickSortRecursion(a, low, pi - 1, count);
-        QuickSortRecursion(a, pi + 1, high, count);
+        
+        // Recursively handle the smaller partition
+        if (pi - low < high - pi) {
+            QuickSortRecursion(a, low, pi - 1, count);
+            low = pi + 1;  // Tail recursion for larger partition
+        } else {
+            QuickSortRecursion(a, pi + 1, high, count);
+            high = pi - 1;  // Tail recursion for larger partition
+        }
     }
 }
 

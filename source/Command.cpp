@@ -206,3 +206,63 @@ void Command5(string algorithmMode, string algorithmName1,
   delete[] data2;
   delete[] originalData;
 }
+// Function to calculate performance metrics for all algorithms with various input sizes
+void CommandBenchmarkAll(string outputParameter) {
+  // Array of input sizes to test
+  int inputSizes[] = {10000, 30000, 50000, 100000, 300000, 500000};
+  int numSizes = 6;
+  
+  // Array of input orders to test
+  string inputOrders[] = {"-rand", "-sorted", "-rev", "-nsorted"};
+  string orderNames[] = {"Randomized", "Sorted", "Reversed", "Nearly Sorted"};
+  int numOrders = 4;
+  
+  // Open output file for results
+  ofstream resultsFile("benchmark_results.csv");
+  resultsFile << "Algorithm,Input Size,Input Order,Time (ms),Comparisons\n";
+  
+  cout << "BENCHMARK ALL ALGORITHMS" << endl;
+  cout << "=========================" << endl;
+  
+  // Loop through each algorithm
+  for (auto& algorithm : algorithms) {
+      cout << "\nTesting algorithm: " << algorithm.name << endl;
+      cout << "-------------------------" << endl;
+      
+      // Loop through each input size
+      for (int i = 0; i < numSizes; i++) {
+          int size = inputSizes[i];
+          cout << "  Input Size: " << size << endl;
+          
+          // Loop through each input order
+          for (int j = 0; j < numOrders; j++) {
+              cout << "    Order: " << orderNames[j] << " - ";
+              
+              // Generate data with the current order
+              int* data = new int[size];
+              GenerateData(data, size, j);
+              
+              // Run the algorithm and measure performance
+              auto start = chrono::high_resolution_clock::now();
+              long long count = algorithm.sort(data, size);
+              auto stop = chrono::high_resolution_clock::now();
+              auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
+              
+              // Print and save results
+              cout << "Time: " << duration.count() << " ms, ";
+              cout << "Comparisons: " << count << endl;
+              
+              // Write results to CSV file
+              resultsFile << algorithm.name << "," << size << "," 
+                         << orderNames[j] << "," << duration.count() 
+                         << "," << count << "\n";
+              
+              // Clean up
+              delete[] data;
+          }
+      }
+  }
+  
+  resultsFile.close();
+  cout << "\nBenchmark completed. Results saved to benchmark_results.csv" << endl;
+}

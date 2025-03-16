@@ -1,0 +1,394 @@
+Testing algorithm: bubble-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 83 ms, Comparisons: 37835154
+    Order: Sorted - Time: 0 ms, Comparisons: 9999
+    Order: Reversed - Time: 47 ms, Comparisons: 37507497
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 9999
+  Input Size: 30000
+    Order: Randomized - Time: 532 ms, Comparisons: 338031834
+    Order: Sorted - Time: 0 ms, Comparisons: 29999
+    Order: Reversed - Time: 402 ms, Comparisons: 337522497
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 29999
+  Input Size: 50000
+    Order: Randomized - Time: 1498 ms, Comparisons: 943235704
+    Order: Sorted - Time: 0 ms, Comparisons: 49999
+    Order: Reversed - Time: 1106 ms, Comparisons: 937537497
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 49999
+  Input Size: 100000
+    Order: Randomized - Time: 5972 ms, Comparisons: 3757413825
+    Order: Sorted - Time: 0 ms, Comparisons: 99999
+    Order: Reversed - Time: 4426 ms, Comparisons: 3750074997
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 99999
+  Input Size: 300000
+    Order: Randomized - Time: 54780 ms, Comparisons: 33777058529
+    Order: Sorted - Time: 0 ms, Comparisons: 299999
+    Order: Reversed - Time: 40591 ms, Comparisons: 33750224997
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 299999
+  Input Size: 500000
+    Order: Randomized - Time: 153244 ms, Comparisons: 93807598204
+    Order: Sorted - Time: 0 ms, Comparisons: 499999
+    Order: Reversed - Time: 112917 ms, Comparisons: 93750374997
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 499999
+
+Testing algorithm: selection-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 59 ms, Comparisons: 49995000
+    Order: Sorted - Time: 59 ms, Comparisons: 49995000
+    Order: Reversed - Time: 66 ms, Comparisons: 49995000
+    Order: Nearly Sorted - Time: 59 ms, Comparisons: 49995000
+  Input Size: 30000
+    Order: Randomized - Time: 533 ms, Comparisons: 449985000
+    Order: Sorted - Time: 530 ms, Comparisons: 449985000
+    Order: Reversed - Time: 597 ms, Comparisons: 449985000
+    Order: Nearly Sorted - Time: 530 ms, Comparisons: 449985000
+  Input Size: 50000
+    Order: Randomized - Time: 1478 ms, Comparisons: 1249975000
+    Order: Sorted - Time: 1473 ms, Comparisons: 1249975000
+    Order: Reversed - Time: 1658 ms, Comparisons: 1249975000
+    Order: Nearly Sorted - Time: 1476 ms, Comparisons: 1249975000
+  Input Size: 100000
+    Order: Randomized - Time: 5917 ms, Comparisons: 4999950000
+    Order: Sorted - Time: 5894 ms, Comparisons: 4999950000
+    Order: Reversed - Time: 6629 ms, Comparisons: 4999950000
+    Order: Nearly Sorted - Time: 5901 ms, Comparisons: 4999950000
+  Input Size: 300000
+    Order: Randomized - Time: 53291 ms, Comparisons: 44999850000
+    Order: Sorted - Time: 53137 ms, Comparisons: 44999850000
+    Order: Reversed - Time: 59686 ms, Comparisons: 44999850000
+    Order: Nearly Sorted - Time: 53224 ms, Comparisons: 44999850000
+  Input Size: 500000
+    Order: Randomized - Time: 147670 ms, Comparisons: 124999750000
+    Order: Sorted - Time: 147574 ms, Comparisons: 124999750000
+    Order: Reversed - Time: 166294 ms, Comparisons: 124999750000
+    Order: Nearly Sorted - Time: 147689 ms, Comparisons: 124999750000
+
+Testing algorithm: insertion-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 37 ms, Comparisons: 25011610
+    Order: Sorted - Time: 0 ms, Comparisons: 9999
+    Order: Reversed - Time: 75 ms, Comparisons: 49995000
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 70999
+  Input Size: 30000
+    Order: Randomized - Time: 335 ms, Comparisons: 223992559
+    Order: Sorted - Time: 0 ms, Comparisons: 29999
+    Order: Reversed - Time: 669 ms, Comparisons: 449985000
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 155305
+  Input Size: 50000
+    Order: Randomized - Time: 931 ms, Comparisons: 622987199
+    Order: Sorted - Time: 0 ms, Comparisons: 49999
+    Order: Reversed - Time: 1874 ms, Comparisons: 1249975000
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 573323
+  Input Size: 100000
+    Order: Randomized - Time: 3799 ms, Comparisons: 2510381366
+    Order: Sorted - Time: 0 ms, Comparisons: 99999
+    Order: Reversed - Time: 7496 ms, Comparisons: 4999950000
+    Order: Nearly Sorted - Time: 1 ms, Comparisons: 970435
+  Input Size: 300000
+    Order: Randomized - Time: 33744 ms, Comparisons: 22507251073
+    Order: Sorted - Time: 0 ms, Comparisons: 299999
+    Order: Reversed - Time: 67115 ms, Comparisons: 44999850000
+    Order: Nearly Sorted - Time: 4 ms, Comparisons: 2970493
+  Input Size: 500000
+    Order: Randomized - Time: 93414 ms, Comparisons: 62466706546
+    Order: Sorted - Time: 1 ms, Comparisons: 499999
+    Order: Reversed - Time: 186561 ms, Comparisons: 124999750000
+    Order: Nearly Sorted - Time: 7 ms, Comparisons: 4834901
+
+Testing algorithm: quick-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 1 ms, Comparisons: 151633
+    Order: Sorted - Time: 158 ms, Comparisons: 49995000
+    Order: Reversed - Time: 116 ms, Comparisons: 49995000
+    Order: Nearly Sorted - Time: 40 ms, Comparisons: 15225649
+  Input Size: 30000
+    Order: Randomized - Time: 2 ms, Comparisons: 540174
+    Order: Sorted - Time: 1238 ms, Comparisons: 449985000
+    Order: Reversed - Time: 1040 ms, Comparisons: 449985000
+    Order: Nearly Sorted - Time: 332 ms, Comparisons: 148754264
+  Input Size: 50000
+    Order: Randomized - Time: 4 ms, Comparisons: 936800
+    Order: Sorted - Time: 3758 ms, Comparisons: 1249975000
+    Order: Reversed - Time: 2961 ms, Comparisons: 1249975000
+    Order: Nearly Sorted - Time: 1269 ms, Comparisons: 490786610
+  Input Size: 100000
+    Order: Randomized - Time: 9 ms, Comparisons: 2047970
+    Order: Sorted - Time: 15750 ms, Comparisons: 4999950000
+    Order: Reversed - Time: 12210 ms, Comparisons: 4999950000
+    Order: Nearly Sorted - Time: 5330 ms, Comparisons: 1781629621
+  Input Size: 300000
+    Order: Randomized - Time: 29 ms, Comparisons: 6700289
+    Order: Sorted - Time: 146315 ms, Comparisons: 44999850000
+    Order: Reversed - Time: 114719 ms, Comparisons: 44999850000
+    Order: Nearly Sorted - Time: 21882 ms, Comparisons: 7740026254
+  Input Size: 500000
+    Order: Randomized - Time: 52 ms, Comparisons: 11184327
+    Order: Sorted - Time: 409288 ms, Comparisons: 124999750000
+    Order: Reversed - Time: 319322 ms, Comparisons: 124999750000
+    Order: Nearly Sorted - Time: 98641 ms, Comparisons: 32458243635
+
+Testing algorithm: radix-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 0 ms, Comparisons: 49999
+    Order: Sorted - Time: 0 ms, Comparisons: 49999
+    Order: Reversed - Time: 0 ms, Comparisons: 49999
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 49999
+  Input Size: 30000
+    Order: Randomized - Time: 0 ms, Comparisons: 179999
+    Order: Sorted - Time: 0 ms, Comparisons: 179999
+    Order: Reversed - Time: 0 ms, Comparisons: 179999
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 179999
+  Input Size: 50000
+    Order: Randomized - Time: 1 ms, Comparisons: 299999
+    Order: Sorted - Time: 1 ms, Comparisons: 299999
+    Order: Reversed - Time: 1 ms, Comparisons: 299999
+    Order: Nearly Sorted - Time: 1 ms, Comparisons: 299999
+  Input Size: 100000
+    Order: Randomized - Time: 2 ms, Comparisons: 599999
+    Order: Sorted - Time: 2 ms, Comparisons: 599999
+    Order: Reversed - Time: 2 ms, Comparisons: 599999
+    Order: Nearly Sorted - Time: 2 ms, Comparisons: 599999
+  Input Size: 300000
+    Order: Randomized - Time: 8 ms, Comparisons: 2099999
+    Order: Sorted - Time: 8 ms, Comparisons: 2099999
+    Order: Reversed - Time: 8 ms, Comparisons: 2099999
+    Order: Nearly Sorted - Time: 8 ms, Comparisons: 2099999
+  Input Size: 500000
+    Order: Randomized - Time: 15 ms, Comparisons: 3499999
+    Order: Sorted - Time: 15 ms, Comparisons: 3499999
+    Order: Reversed - Time: 15 ms, Comparisons: 3499999
+    Order: Nearly Sorted - Time: 15 ms, Comparisons: 3499999
+
+Testing algorithm: shaker-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 136 ms, Comparisons: 33269808
+    Order: Sorted - Time: 0 ms, Comparisons: 9999
+    Order: Reversed - Time: 151 ms, Comparisons: 49995000
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 75555
+  Input Size: 30000
+    Order: Randomized - Time: 1299 ms, Comparisons: 298458888
+    Order: Sorted - Time: 0 ms, Comparisons: 29999
+    Order: Reversed - Time: 1373 ms, Comparisons: 449985000
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 221017
+  Input Size: 50000
+    Order: Randomized - Time: 3758 ms, Comparisons: 833815974
+    Order: Sorted - Time: 0 ms, Comparisons: 49999
+    Order: Reversed - Time: 3834 ms, Comparisons: 1249975000
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 335352
+  Input Size: 100000
+    Order: Randomized - Time: 15788 ms, Comparisons: 3332679278
+    Order: Sorted - Time: 0 ms, Comparisons: 99999
+    Order: Reversed - Time: 16098 ms, Comparisons: 4999950000
+    Order: Nearly Sorted - Time: 2 ms, Comparisons: 838312
+  Input Size: 300000
+    Order: Randomized - Time: 145558 ms, Comparisons: 29973511759
+    Order: Sorted - Time: 0 ms, Comparisons: 299999
+    Order: Reversed - Time: 154074 ms, Comparisons: 44999850000
+    Order: Nearly Sorted - Time: 7 ms, Comparisons: 2555501
+  Input Size: 500000
+    Order: Randomized - Time: 404764 ms, Comparisons: 83311139074
+    Order: Sorted - Time: 0 ms, Comparisons: 499999
+    Order: Reversed - Time: 434947 ms, Comparisons: 124999750000
+    Order: Nearly Sorted - Time: 13 ms, Comparisons: 4523603
+
+Testing algorithm: shell-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 1 ms, Comparisons: 262508
+    Order: Sorted - Time: 0 ms, Comparisons: 120005
+    Order: Reversed - Time: 0 ms, Comparisons: 172578
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 142104
+  Input Size: 30000
+    Order: Randomized - Time: 3 ms, Comparisons: 924139
+    Order: Sorted - Time: 0 ms, Comparisons: 390007
+    Order: Reversed - Time: 1 ms, Comparisons: 567016
+    Order: Nearly Sorted - Time: 1 ms, Comparisons: 453530
+  Input Size: 50000
+    Order: Randomized - Time: 7 ms, Comparisons: 1896576
+    Order: Sorted - Time: 1 ms, Comparisons: 700006
+    Order: Reversed - Time: 2 ms, Comparisons: 1047305
+    Order: Nearly Sorted - Time: 2 ms, Comparisons: 835276
+  Input Size: 100000
+    Order: Randomized - Time: 16 ms, Comparisons: 4439866
+    Order: Sorted - Time: 3 ms, Comparisons: 1500006
+    Order: Reversed - Time: 4 ms, Comparisons: 2244585
+    Order: Nearly Sorted - Time: 4 ms, Comparisons: 1793236
+  Input Size: 300000
+    Order: Randomized - Time: 55 ms, Comparisons: 14477986
+    Order: Sorted - Time: 10 ms, Comparisons: 5100008
+    Order: Reversed - Time: 15 ms, Comparisons: 7300919
+    Order: Nearly Sorted - Time: 14 ms, Comparisons: 5780685
+  Input Size: 500000
+    Order: Randomized - Time: 105 ms, Comparisons: 29725967
+    Order: Sorted - Time: 17 ms, Comparisons: 8500007
+    Order: Reversed - Time: 26 ms, Comparisons: 12428778
+    Order: Nearly Sorted - Time: 23 ms, Comparisons: 9745256
+
+Testing algorithm: heap-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 1 ms, Comparisons: 258440
+    Order: Sorted - Time: 1 ms, Comparisons: 273912
+    Order: Reversed - Time: 1 ms, Comparisons: 243392
+    Order: Nearly Sorted - Time: 1 ms, Comparisons: 273716
+  Input Size: 30000
+    Order: Randomized - Time: 4 ms, Comparisons: 869506
+    Order: Sorted - Time: 3 ms, Comparisons: 910200
+    Order: Reversed - Time: 3 ms, Comparisons: 828424
+    Order: Nearly Sorted - Time: 3 ms, Comparisons: 910168
+  Input Size: 50000
+    Order: Randomized - Time: 8 ms, Comparisons: 1524604
+    Order: Sorted - Time: 6 ms, Comparisons: 1596608
+    Order: Reversed - Time: 6 ms, Comparisons: 1447784
+    Order: Nearly Sorted - Time: 6 ms, Comparisons: 1596376
+  Input Size: 100000
+    Order: Randomized - Time: 17 ms, Comparisons: 3249682
+    Order: Sorted - Time: 13 ms, Comparisons: 3401708
+    Order: Reversed - Time: 12 ms, Comparisons: 3094868
+    Order: Nearly Sorted - Time: 12 ms, Comparisons: 3401612
+  Input Size: 300000
+    Order: Randomized - Time: 57 ms, Comparisons: 10691060
+    Order: Sorted - Time: 42 ms, Comparisons: 11122320
+    Order: Reversed - Time: 41 ms, Comparisons: 10252492
+    Order: Nearly Sorted - Time: 42 ms, Comparisons: 11124616
+  Input Size: 500000
+    Order: Randomized - Time: 102 ms, Comparisons: 18548026
+    Order: Sorted - Time: 73 ms, Comparisons: 19211400
+    Order: Reversed - Time: 72 ms, Comparisons: 17836900
+    Order: Nearly Sorted - Time: 73 ms, Comparisons: 19228244
+Testing algorithm: binary-insertion-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 37 ms, Comparisons: 25277702
+    Order: Sorted - Time: 0 ms, Comparisons: 133616
+    Order: Reversed - Time: 74 ms, Comparisons: 50118630
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 199445
+  Input Size: 30000
+    Order: Randomized - Time: 335 ms, Comparisons: 224215059
+    Order: Sorted - Time: 1 ms, Comparisons: 447232
+    Order: Reversed - Time: 672 ms, Comparisons: 450402247
+    Order: Nearly Sorted - Time: 1 ms, Comparisons: 590700
+  Input Size: 50000
+    Order: Randomized - Time: 943 ms, Comparisons: 624737014
+    Order: Sorted - Time: 1 ms, Comparisons: 784464
+    Order: Reversed - Time: 1910 ms, Comparisons: 1250709480
+    Order: Nearly Sorted - Time: 2 ms, Comparisons: 1121492
+  Input Size: 100000
+    Order: Randomized - Time: 3760 ms, Comparisons: 2504803555
+    Order: Sorted - Time: 4 ms, Comparisons: 1668928
+    Order: Reversed - Time: 7426 ms, Comparisons: 5001518945
+    Order: Nearly Sorted - Time: 5 ms, Comparisons: 2156481
+  Input Size: 300000
+    Order: Randomized - Time: 33776 ms, Comparisons: 22490177340
+    Order: Sorted - Time: 13 ms, Comparisons: 5475712
+    Order: Reversed - Time: 68108 ms, Comparisons: 45005025731
+    Order: Nearly Sorted - Time: 17 ms, Comparisons: 7145043
+  Input Size: 500000
+    Order: Randomized - Time: 94755 ms, Comparisons: 62553473311
+    Order: Sorted - Time: 25 ms, Comparisons: 9475712
+    Order: Reversed - Time: 190432 ms, Comparisons: 125008725731
+    Order: Nearly Sorted - Time: 34 ms, Comparisons: 14515375
+
+Testing algorithm: merge-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 1 ms, Comparisons: 120475
+    Order: Sorted - Time: 0 ms, Comparisons: 69008
+    Order: Reversed - Time: 0 ms, Comparisons: 64608
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 86524
+  Input Size: 30000
+    Order: Randomized - Time: 4 ms, Comparisons: 408776
+    Order: Sorted - Time: 2 ms, Comparisons: 227728
+    Order: Reversed - Time: 2 ms, Comparisons: 219504
+    Order: Nearly Sorted - Time: 2 ms, Comparisons: 277384
+  Input Size: 50000
+    Order: Randomized - Time: 7 ms, Comparisons: 718164
+    Order: Sorted - Time: 4 ms, Comparisons: 401952
+    Order: Reversed - Time: 4 ms, Comparisons: 382512
+    Order: Nearly Sorted - Time: 4 ms, Comparisons: 486461
+  Input Size: 100000
+    Order: Randomized - Time: 15 ms, Comparisons: 1536178
+    Order: Sorted - Time: 8 ms, Comparisons: 853904
+    Order: Reversed - Time: 8 ms, Comparisons: 815024
+    Order: Nearly Sorted - Time: 8 ms, Comparisons: 1020799
+  Input Size: 300000
+    Order: Randomized - Time: 50 ms, Comparisons: 5083919
+    Order: Sorted - Time: 26 ms, Comparisons: 2797264
+    Order: Reversed - Time: 26 ms, Comparisons: 2678448
+    Order: Nearly Sorted - Time: 27 ms, Comparisons: 3368542
+  Input Size: 500000
+    Order: Randomized - Time: 86 ms, Comparisons: 8836885
+    Order: Sorted - Time: 44 ms, Comparisons: 4783216
+    Order: Reversed - Time: 44 ms, Comparisons: 4692496
+    Order: Nearly Sorted - Time: 45 ms, Comparisons: 5611708
+
+Testing algorithm: counting-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 0 ms, Comparisons: 9999
+    Order: Sorted - Time: 0 ms, Comparisons: 9999
+    Order: Reversed - Time: 0 ms, Comparisons: 9999
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 9999
+  Input Size: 30000
+    Order: Randomized - Time: 0 ms, Comparisons: 29999
+    Order: Sorted - Time: 0 ms, Comparisons: 29999
+    Order: Reversed - Time: 0 ms, Comparisons: 29999
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 29999
+  Input Size: 50000
+    Order: Randomized - Time: 0 ms, Comparisons: 49999
+    Order: Sorted - Time: 0 ms, Comparisons: 49999
+    Order: Reversed - Time: 0 ms, Comparisons: 49999
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 49999
+  Input Size: 100000
+    Order: Randomized - Time: 0 ms, Comparisons: 99999
+    Order: Sorted - Time: 0 ms, Comparisons: 99999
+    Order: Reversed - Time: 0 ms, Comparisons: 99999
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 99999
+  Input Size: 300000
+    Order: Randomized - Time: 2 ms, Comparisons: 299999
+    Order: Sorted - Time: 2 ms, Comparisons: 299999
+    Order: Reversed - Time: 2 ms, Comparisons: 299999
+    Order: Nearly Sorted - Time: 2 ms, Comparisons: 299999
+  Input Size: 500000
+    Order: Randomized - Time: 4 ms, Comparisons: 499999
+    Order: Sorted - Time: 3 ms, Comparisons: 499999
+    Order: Reversed - Time: 3 ms, Comparisons: 499999
+    Order: Nearly Sorted - Time: 3 ms, Comparisons: 499999
+
+Testing algorithm: flash-sort
+-------------------------
+  Input Size: 10000
+    Order: Randomized - Time: 0 ms, Comparisons: 44407
+    Order: Sorted - Time: 0 ms, Comparisons: 55494
+    Order: Reversed - Time: 0 ms, Comparisons: 48747
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 55488
+  Input Size: 30000
+    Order: Randomized - Time: 0 ms, Comparisons: 142390
+    Order: Sorted - Time: 0 ms, Comparisons: 166494
+    Order: Reversed - Time: 0 ms, Comparisons: 146247
+    Order: Nearly Sorted - Time: 0 ms, Comparisons: 166490
+  Input Size: 50000
+    Order: Randomized - Time: 1 ms, Comparisons: 234217
+    Order: Sorted - Time: 1 ms, Comparisons: 277494
+    Order: Reversed - Time: 0 ms, Comparisons: 243747
+    Order: Nearly Sorted - Time: 1 ms, Comparisons: 277489
+  Input Size: 100000
+    Order: Randomized - Time: 3 ms, Comparisons: 470453
+    Order: Sorted - Time: 2 ms, Comparisons: 554994
+    Order: Reversed - Time: 2 ms, Comparisons: 487497
+    Order: Nearly Sorted - Time: 2 ms, Comparisons: 554989
+  Input Size: 300000
+    Order: Randomized - Time: 9 ms, Comparisons: 1298805
+    Order: Sorted - Time: 6 ms, Comparisons: 1664994
+    Order: Reversed - Time: 5 ms, Comparisons: 1462497
+    Order: Nearly Sorted - Time: 6 ms, Comparisons: 1664989
+  Input Size: 500000
+    Order: Randomized - Time: 18 ms, Comparisons: 2361430
+    Order: Sorted - Time: 10 ms, Comparisons: 2774994
+    Order: Reversed - Time: 9 ms, Comparisons: 2437497
+    Order: Nearly Sorted - Time: 10 ms, Comparisons: 2774989
