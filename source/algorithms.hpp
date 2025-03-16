@@ -23,8 +23,11 @@ inline int findMax(int a[], int n) {
   return max;
 }
 
+long long BinaryInsertionSort(int a[], int n);
 long long SelectionSort(int a[], int n);
 long long InsertionSort(int a[], int n);
+long long FlashSort(int a[], int n);
+long long MergeSort(int a[], int n);
 long long QuickSort(int a[], int n);
 
 long long RadixSort(int a[], int n);
