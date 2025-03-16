@@ -24,11 +24,9 @@ std::vector<AlgorithmInfo> algorithms = {
 
 long long BubbleSort(int a[], int n) {
     long long count = 0;
-
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = i + 1; j < n; j++) {
-            count++;
-
+    for (int i = 0; ++count && i < n - 1; i++) {
+        for (int j = i + 1; ++count && j < n; j++) {
+            ++count;
             if (a[i] > a[j]) {
                 swap(a[i], a[j]);
             }
@@ -41,11 +39,11 @@ long long BubbleSort(int a[], int n) {
 long long SelectionSort(int a[], int n) {
     long long count = 0;
 
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; ++count && i < n - 1; i++) {
         int min_idx = i;
 
-        for (int j = i + 1; j < n; j++) {
-            count++;
+        for (int j = i + 1; ++count && j < n; j++) {
+            ++count;
 
             if (a[j] < a[min_idx]) {
                 min_idx = j;
@@ -61,15 +59,13 @@ long long SelectionSort(int a[], int n) {
 long long InsertionSort(int a[], int n) {
     long long count = 0;
 
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; ++count && i < n; i++) {
         int key = a[i];
         int j = i - 1;
 
-        count++;
+        ++count;
 
-        while (j >= 0 && a[j] > key) {
-            count++;
-
+        while (++count && j >= 0 && ++count && a[j] > key) {
             a[j + 1] = a[j];
             j--;
         }
@@ -85,8 +81,8 @@ int partition(int a[], int low, int high, long long& count) {
     int pivot = a[high];
     int i = low - 1;
 
-    for (int j = low; j < high; j++) {
-        count++;
+    for (int j = low; ++count && j < high; j++) {
+        ++count;
 
         if (a[j] < pivot) {
             i++;
@@ -99,7 +95,7 @@ int partition(int a[], int low, int high, long long& count) {
 }
 
 void QuickSortRecursion(int a[], int low, int high, long long& count) {
-    if (low < high) {
+    if (++count && low < high) {
         int pi = partition(a, low, high, count);
         QuickSortRecursion(a, low, pi - 1, count);
         QuickSortRecursion(a, pi + 1, high, count);
@@ -116,32 +112,34 @@ long long countSortForRadixSort(int a[], int n, int exponent) {
     int* output = new int[n];
     int count[10] = {0};
 
-    for (int i = 0; i < n; i++) {
+    long long comparisons = 0;
+
+    for (int i = 0; ++comparisons && i < n; i++) {
         count[(a[i] / exponent) % 10]++;
     }
 
-    for (int i = 1; i < 10; i++) {
+    for (int i = 1; ++comparisons && i < 10; i++) {
         count[i] += count[i - 1];
     }
 
-    for (int i = n - 1; i >= 0; i--) {
+    for (int i = n - 1; ++comparisons && i >= 0; i--) {
         output[count[(a[i] / exponent) % 10] - 1] = a[i];
         count[(a[i] / exponent) % 10]--;
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; ++comparisons && i < n; i++) {
         a[i] = output[i];
     }
 
     delete[] output;
 
-    return 0;
+    return comparisons;
 }
 
-int findMax(int a[], int n) {
+int findMax(int a[], int n, long long &comparisons) {
     int max = a[0];
 
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; ++comparisons && i < n; i++) {
         if (a[i] > max) {
             max = a[i];
         }
@@ -152,9 +150,9 @@ int findMax(int a[], int n) {
 
 long long RadixSort(int a[], int n) {
     long long count = 0;
-    int max = findMax(a, n);
+    int max = findMax(a, n, count);
 
-    for (int exp = 1; max / exp > 0; exp *= 10) {
+    for (int exp = 1; ++count && max / exp > 0; exp *= 10) {
         count += countSortForRadixSort(a, n, exp);
     }
 
@@ -167,9 +165,9 @@ long long ShakerSort(int data[], int size) {
     int right = size - 1;
     int k = 0;
 
-    while (left < right) {
-        for (int i = left; i < right; i++) {
-            count++;
+    while (++count && left < right) {
+        for (int i = left; ++count && i < right; i++) {
+            ++count;
 
             if (data[i] > data[i + 1]) {
                 std::swap(data[i], data[i + 1]);
@@ -179,8 +177,8 @@ long long ShakerSort(int data[], int size) {
 
         right = k;
 
-        for (int i = right; i > left; i--) {
-            count++;
+        for (int i = right; ++count && i > left; i--) {
+            ++count;
 
             if (data[i] < data[i - 1]) {
                 std::swap(data[i], data[i - 1]);
@@ -197,13 +195,13 @@ long long ShakerSort(int data[], int size) {
 long long ShellSort(int data[], int size) {
     long long count = 0;
 
-    for (int gap = size / 2; gap > 0; gap /= 2) {
-        for (int i = gap; i < size; i++) {
+    for (int gap = size / 2; ++count && gap > 0; gap /= 2) {
+        for (int i = gap; ++count && i < size; i++) {
             int temp = data[i];
             int j = i;
 
-            for ( ; j >= gap; j -= gap) {
-                count++;
+            for ( ; ++count && j >= gap; j -= gap) {
+                ++count;
 
                 if (data[j - gap] <= temp) {
                     break;
@@ -224,21 +222,18 @@ long long heapify(int a[], int n, int i, long long& count) {
     int left = 2 * i + 1;
     int right = 2 * i + 2;
 
-    count++;
-
-    if (left < n && a[left] > a[largest]) {
+    
+    if (++count && left < n && ++count && a[left] > a[largest]) {
         largest = left;
     }
 
-    count++;
 
-    if (right < n && a[right] > a[largest]) {
+    if (++count && right < n && ++count && a[right] > a[largest]) {
         largest = right;
     }
 
-    count++;
 
-    if (largest != i) {
+    if (++count && largest != i) {
         swap(a[i], a[largest]);
         heapify(a, n, largest, count);
     }
@@ -249,11 +244,11 @@ long long heapify(int a[], int n, int i, long long& count) {
 long long HeapSort(int a[], int n) {
     long long count = 0;
 
-    for (int i = n / 2 - 1; i >= 0; i--) {
+    for (int i = n / 2 - 1; ++count && i >= 0; i--) {
         heapify(a, n, i, count);
     }
 
-    for (int i = n - 1; i > 0 ; i--) {
+    for (int i = n - 1; ++count && i > 0 ; i--) {
         swap(a[0], a[i]);
         heapify(a, i, 0, count);
     }
@@ -264,15 +259,15 @@ long long HeapSort(int a[], int n) {
 long long BinaryInsertionSort(int a[], int n) {
     long long count = 0;
 
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; ++count && i < n; i++) {
         int key = a[i];
         int left = 0;
         int right = i - 1;
 
         // Binary search to find the correct position for the key
-        while (left <= right) {
+        while (++count && left <= right) {
             int mid = left + (right - left) / 2;
-            count++;
+            ++count;
 
             if (a[mid] <= key) {
                 left = mid + 1;
@@ -282,7 +277,7 @@ long long BinaryInsertionSort(int a[], int n) {
         }
 
         // Shift elements to make space for the key
-        for (int j = i - 1; j >= left; j--) {
+        for (int j = i - 1; ++count && j >= left; j--) {
             a[j + 1] = a[j];
         }
 
@@ -299,18 +294,18 @@ void merge(int a[], int left, int mid, int right, long long& count) {
     int* L = new int[n1];
     int* R = new int[n2];
 
-    for (int i = 0; i < n1; i++) {
+    for (int i = 0; ++count && i < n1; i++) {
         L[i] = a[left + i];
     }
 
-    for (int j = 0; j < n2; j++) {
+    for (int j = 0; ++count && j < n2; j++) {
         R[j] = a[mid + 1 + j];
     }
 
     int i = 0, j = 0, k = left;
 
-    while (i < n1 && j < n2) {
-        count++;
+    while (++count && i < n1 && ++count && j < n2) {
+        ++count;
 
         if (L[i] <= R[j]) {
             a[k] = L[i];
@@ -323,13 +318,13 @@ void merge(int a[], int left, int mid, int right, long long& count) {
         k++;
     }
 
-    while (i < n1) {
+    while (++count && i < n1) {
         a[k] = L[i];
         i++;
         k++;
     }
 
-    while (j < n2) {
+    while (++count && j < n2) {
         a[k] = R[j];
         j++;
         k++;
@@ -340,6 +335,7 @@ void merge(int a[], int left, int mid, int right, long long& count) {
 }
 
 void mergeSortRecursion(int a[], int left, int right, long long& count) {
+    ++count;
     if (left < right) {
         int mid = left + (right - left) / 2;
 
@@ -364,23 +360,23 @@ long long CountingSort(int a[], int n) {
     int* countArray = new int[max + 1]();
 
     // Store the count of each element
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; ++count && i < n; i++) {
         countArray[a[i]]++;
     }
 
     // Store the cumulative count
-    for (int i = 1; i <= max; i++) {
+    for (int i = 1; ++count && i <= max; i++) {
         countArray[i] += countArray[i - 1];
     }
 
     // Build the output array
-    for (int i = n - 1; i >= 0; i--) {
+    for (int i = n - 1; ++count && i >= 0; i--) {
         output[countArray[a[i]] - 1] = a[i];
         countArray[a[i]]--;
     }
 
     // Copy the output array to the original array
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; ++count && i < n; i++) {
         a[i] = output[i];
     }
 
@@ -402,7 +398,8 @@ long long FlashSort(int a[], int n) {
     int maxIndex = 0;
 
     // Find the minimum and maximum values in the array
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; ++count && i < n; i++) {
+
         if (a[i] < minValue) {
             minValue = a[i];
         }
@@ -414,7 +411,7 @@ long long FlashSort(int a[], int n) {
         count += 2;
     }
 
-    count++;
+    ++count;
 
     // If all elements are the same, return the count
     if (a[maxIndex] == minValue) {
@@ -426,13 +423,13 @@ long long FlashSort(int a[], int n) {
     double scalingFactor = (double)(numClasses - 1) / (a[maxIndex] - minValue);
 
     // Count the number of elements in each class
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; ++count && i < n; i++) {
         int classIndex = int(scalingFactor * (a[i] - minValue));
         classCounts[classIndex]++;
     }
 
     // Calculate the cumulative count
-    for (int i = 1; i < numClasses; i++) {
+    for (int i = 1; ++count && i < numClasses; i++) {
         classCounts[i] += classCounts[i - 1];
     }
 
@@ -445,9 +442,9 @@ long long FlashSort(int a[], int n) {
     int flashValue;
 
     // Permute the elements to their correct classes
-    while (numMoves < n - 1) {
+    while (++count && numMoves < n - 1) {
         // Find the correct class for the current element
-        while (currentIndex > classCounts[classIndex] - 1) {
+        while (++count && currentIndex > classCounts[classIndex] - 1) {
             currentIndex++;
             classIndex = int(scalingFactor * (a[currentIndex] - minValue));
         }
@@ -455,7 +452,7 @@ long long FlashSort(int a[], int n) {
         flashValue = a[currentIndex];
 
         // Place the element in its correct class
-        while (currentIndex != classCounts[classIndex]) {
+        while (++count && currentIndex != classCounts[classIndex]) {
             classIndex = int(scalingFactor * (flashValue - minValue));
             std::swap(flashValue, a[classCounts[classIndex] - 1]);
 
@@ -467,20 +464,14 @@ long long FlashSort(int a[], int n) {
     delete[] classCounts;
 
     // Use insertion sort to finish up
-    for (int i = 1; i < n; i++) {
-        count++;
+    for (int i = 1; ++count && i < n; i++) {
         int key = a[i];
         int j = i - 1;
 
-        while (j >= 0 && a[j] > key) {
-            count++;
+        while (++count && j >= 0 && ++count && a[j] > key) {
 
             a[j + 1] = a[j];
             j--;
-        }
-
-        if (j >= 0) {
-            count++;
         }
 
         a[j + 1] = key;
