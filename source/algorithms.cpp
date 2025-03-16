@@ -24,15 +24,18 @@ std::vector<AlgorithmInfo> algorithms = {
 
 long long BubbleSort(int a[], int n) {
     long long count = 0;
-
+    bool swapped;
     for (int i = 0; i < n - 1; i++) {
-        for (int j = i + 1; j < n; j++) {
-            count++;
+        swapped = false;
+        for (int j = 0; j < n - i - 1; j++) {
+            ++count;
 
-            if (a[i] > a[j]) {
-                swap(a[i], a[j]);
+            if (a[i] > a[j+1]) {
+                swap(a[i], a[j+1]);
+                swapped = true;
             }
         }
+        if(!swapped) break;
     }
 
     return count;
@@ -116,6 +119,7 @@ long long countSortForRadixSort(int a[], int n, int exponent) {
 
     for (int i = 0; i < n; i++) {
         count[(a[i] / exponent) % 10]++;
+        ++comparisons;
     }
 
     for (int i = 1; i < 10; i++) {
@@ -358,7 +362,13 @@ long long MergeSort(int a[], int n) {
 
 long long CountingSort(int a[], int n) {
     long long count = 0;
-    int max = *std::max_element(a, a + n);
+    int max = a[0];
+    for (int i = 1; i < n; i++) {
+        ++count; 
+        if (a[i] > max) {
+            max = a[i];
+        }
+    }
 
     int* output = new int[n];
     int* countArray = new int[max + 1]();
@@ -449,6 +459,7 @@ long long FlashSort(int a[], int n) {
         // Find the correct class for the current element
         while (currentIndex > classCounts[classIndex] - 1) {
             currentIndex++;
+            count++;
             classIndex = int(scalingFactor * (a[currentIndex] - minValue));
         }
 
@@ -456,6 +467,7 @@ long long FlashSort(int a[], int n) {
 
         // Place the element in its correct class
         while (currentIndex != classCounts[classIndex]) {
+            count++;
             classIndex = int(scalingFactor * (flashValue - minValue));
             std::swap(flashValue, a[classCounts[classIndex] - 1]);
 
