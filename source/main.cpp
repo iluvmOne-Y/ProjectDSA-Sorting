@@ -2,12 +2,14 @@
 
 int main(int argc, char *argv[]) {
   //benchmark all algorithms
-  if(argc == 1) {
+  
+/* if(argc == 1) {
     CommandBenchmarkAll("-both");
     return 0;
   }
+*/
   //command mode
-  else if (strcmp(argv[1],"-a")==0) {
+  if (strcmp(argv[1],"-a")==0) {
     if (argc == 5 && isdigit(argv[3][0])) {
       Command3(argv[1], argv[2], argv[3], argv[4]);
     } else if (argc == 5) {
