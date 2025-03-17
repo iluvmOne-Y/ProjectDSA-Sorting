@@ -1,5 +1,5 @@
 
-##Data Structures and Algorithms - Sorting Algorithms Implementation
+## Data Structures and Algorithms - Sorting Algorithms Implementation
 
 This project implements and analyzes 12 different sorting algorithms, measuring their performance in terms of execution time and number of comparisons across various input sizes and data distributions.
 
