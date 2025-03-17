@@ -108,7 +108,7 @@ The program supports five primary command modes:
 
 Compile the project with:
 ```
-g++ -o test source/*.cpp
+g++ -std=c++20 -o test source/*.cpp
 ```
 
 Run benchmarks for all algorithms:
