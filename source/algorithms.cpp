@@ -25,17 +25,22 @@ std::vector<AlgorithmInfo> algorithms = {
 long long BubbleSort(int a[], int n) {
     long long count = 0;
     bool swapped;
+
     for (int i = 0; i < n - 1; i++) {
         swapped = false;
+
         for (int j = 0; j < n - i - 1; j++) {
             ++count;
 
-            if (a[i] > a[j+1]) {
-                swap(a[i], a[j+1]);
+            if (a[i] > a[j + 1]) {
+                swap(a[i], a[j + 1]);
                 swapped = true;
             }
         }
-        if(!swapped) break;
+
+        if (!swapped) {
+            break;
+        }
     }
 
     return count;
@@ -100,7 +105,7 @@ int partition(int a[], int low, int high, long long& count) {
 void QuickSortRecursion(int a[], int low, int high, long long& count) {
     while (low < high) {
         int pi = partition(a, low, high, count);
-        
+
         // Recursively handle the smaller partition
         if (pi - low < high - pi) {
             QuickSortRecursion(a, low, pi - 1, count);
@@ -126,7 +131,6 @@ long long countSortForRadixSort(int a[], int n, int exponent) {
 
     for (int i = 0; i < n; i++) {
         count[(a[i] / exponent) % 10]++;
-        ++comparisons;
     }
 
     for (int i = 1; i < 10; i++) {
@@ -369,13 +373,8 @@ long long MergeSort(int a[], int n) {
 
 long long CountingSort(int a[], int n) {
     long long count = 0;
-    int max = a[0];
-    for (int i = 1; i < n; i++) {
-        ++count; 
-        if (a[i] > max) {
-            max = a[i];
-        }
-    }
+
+    int max = findMax(a, n, count);
 
     int* output = new int[n];
     int* countArray = new int[max + 1]();
