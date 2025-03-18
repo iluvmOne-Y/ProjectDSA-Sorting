@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 typedef long long (*SortFunction)(int[], int);
 
 struct AlgorithmInfo {
