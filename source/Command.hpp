@@ -19,5 +19,5 @@ void Command4(string algorithmMode, string algorithmName1,
 void Command5(string algorithmMode, string algorithmName1,
               string algorithmName2, string inputSize, string inputOrder);
               
-void CommandBenchmarkAll(string outputParameter);
+//void CommandBenchmarkAll(string outputParameter);
 #endif
