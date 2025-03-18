@@ -5,10 +5,13 @@
 #include <cmath>
 #include <fstream>
 #include <string>
-int *readDataFromFile(const std::string &filename, int &n);
-AlgorithmInfo *findAlgorithm(const std::string &name);
+
+
+int* readDataFromFile(const std::string &filename, int& n);
+AlgorithmInfo* findAlgorithm(const std::string &name);
 int chooseInputOrder(string s);
-void printTerminal(string outputParameter,int order, double runningTime, long long comparasion);
+void printTerminal(string outputParameter, int order, double runningTime, long long comparasion);
 void writeFile(int a[], int size, string fileName);
-void printOutputBasedOnParameter(string outputParameter, double time, long long comparisons) ;
+void printOutputBasedOnParameter(string outputParameter, double time, long long comparisons);
+
 #endif
